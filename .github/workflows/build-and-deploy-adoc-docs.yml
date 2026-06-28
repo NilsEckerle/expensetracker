@@ -36,7 +36,9 @@ jobs:
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
 
       - name: Generate docs
-        run: ./adoc-gen.sh
+        run: |
+          git clone https://github.com/NilsEckerle/adoc-gen.git /tmp/adoc-gen
+          /tmp/adoc-gen/adoc-gen.sh
 
       - uses: actions/upload-pages-artifact@v3
         with:

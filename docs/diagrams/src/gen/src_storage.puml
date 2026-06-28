@@ -1,8 +1,4 @@
 @startuml
-namespace cmd {
-    namespace expensetracker {
-    }
-}
 namespace storage {
     class "Currency" << (S,Aquamarine) >> {
         + CurrencyCode string
@@ -33,10 +29,10 @@ namespace storage {
 }
 
 
-"expensetracker.src.storage.Expense" o-- "expensetracker.src.storage.Currency"
-"expensetracker.src.storage.Expense" o-- "expensetracker.src.storage.Tag"
-"expensetracker.src.storage.Expense" o-- "time.Time"
-"expensetracker.src.storage.Tag" o-- "expensetracker.src.storage.Expense"
+"storage.Expense" o-- "storage.Currency"
+"storage.Expense" o-- "storage.Tag"
+"storage.Expense" o-- "time.Time"
+"storage.Tag" o-- "storage.Expense"
 
 
 @enduml

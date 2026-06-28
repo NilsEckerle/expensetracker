@@ -6,3 +6,7 @@ Generated class diagrams. Regenerated on each run; do not hand-edit.
 
 image::project.png[Whole project,align=center]
 
+== src.storage
+
+image::src_storage.png[src.storage,align=center]
+

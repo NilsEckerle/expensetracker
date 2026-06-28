@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/NilsEckerle/expensetracker/src/storage"
+	"github.com/NilsEckerle/expensetracker/src/tui"
 )
 
 func main() {
@@ -16,4 +17,6 @@ func main() {
 	db.Create(&storage.Currency{CurrencyCode: "EUR", Symbol: "€", Ascii: "EUR"})
 
 	_ = db // hand off to your TUI from here
+
+	tui.Run()
 }

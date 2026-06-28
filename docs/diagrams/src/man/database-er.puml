@@ -1,0 +1,42 @@
+@startuml
+' database-er.puml
+hide circle
+skinparam linetype ortho
+
+entity "expenses" as expenses {
+  *expense_id : int <<PK>>
+  --
+  *title : text
+  *description : text
+  *currency_code : Varchar(10) <<FK>>
+  *amount_cents : int
+  *start_date : date
+  *occurrences : int
+  *interval_unit : text
+  *interval_count : int
+}
+
+entity "expenses_tags" as expenses_tags {
+  *expense_id : int <<PK>><<FK>>
+  *tag_name : Varchar(64) <<PK>><<FK>>
+  --
+  ' PK is the composite (expense_id, tag_name)
+}
+
+entity "tags" as tags {
+  *tag_name : Varchar(64) <<PK>>
+  --
+  *description : text
+}
+
+entity "currencies" as currencies {
+  *currency_code : Varchar(10) <<PK>>
+  --
+  *symbol : Varchar(4)
+  *ascii : Varchar(32)
+}
+
+expenses }o--|| currencies
+expenses_tags }o--|| expenses
+expenses_tags }o--|| tags
+@enduml

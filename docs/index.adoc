@@ -12,8 +12,8 @@ Auto-generated documentation for *expensetracker*.
 Diagrams below are generated from source; edit prose in
 `chapters/` - those files are never overwritten.
 
+include::chapters/database.adoc[leveloffset=+1]
 include::chapters/diagrams.adoc[leveloffset=+1]
-include::chapters/helloworld.adoc[leveloffset=+1]
 
 // add your own hand-written chapters here, e.g.:
 // include::chapters/design.adoc[leveloffset=+1]

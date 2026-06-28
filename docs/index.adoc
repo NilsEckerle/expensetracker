@@ -1,0 +1,19 @@
+= expensetracker — Documentation
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+:imagesdir: diagrams/out/gen
+:source-highlighter: rouge
+
+== Overview
+
+Auto-generated documentation for *expensetracker*.
+Diagrams below are generated from source; edit prose in
+`chapters/` - those files are never overwritten.
+
+include::chapters/diagrams.adoc[leveloffset=+1]
+include::chapters/helloworld.adoc[leveloffset=+1]
+
+// add your own hand-written chapters here, e.g.:
+// include::chapters/design.adoc[leveloffset=+1]

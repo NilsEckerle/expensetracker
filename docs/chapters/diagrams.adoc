@@ -1,0 +1,8 @@
+= Diagrams
+
+Generated class diagrams. Regenerated on each run; do not hand-edit.
+
+== Whole project
+
+image::project.png[Whole project,align=center]
+

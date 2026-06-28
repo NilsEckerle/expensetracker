@@ -1,0 +1,10 @@
+@startuml
+namespace cmd {
+    namespace expensetracker {
+    }
+}
+
+
+
+
+@enduml

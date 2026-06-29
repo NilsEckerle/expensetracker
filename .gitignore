@@ -1,2 +1,4 @@
 docs/index.html
 *.db
+docs/diagrams/src/gen/
+docs/diagrams/out/gen/

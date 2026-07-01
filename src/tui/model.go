@@ -7,6 +7,8 @@ import (
 
 type model struct {
 	activeScreen tea.Model
+	width        int
+	height       int
 }
 
 func NewModel() model {

@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"time"
 
 	"github.com/NilsEckerle/expensetracker/src/storage"
@@ -138,9 +139,29 @@ func seedExpenses(db *gorm.DB) {
 			Description:   "Monthly server hosting (USD billed)",
 			CurrencyCode:  "USD",
 			AmountCents:   2500,
-			StartDate:     date(time.January, 8),
-			Occurrences:   11,
+			StartDate:     time.Date(2027, time.January, 1, 0, 0, 0, 0, time.UTC),
+			Occurrences:   12 * 10,
 			IntervalUnit:  "month",
+			IntervalCount: 1,
+		},
+		{
+			Title:         "Cloud hosting",
+			Description:   "Monthly server hosting (USD billed)",
+			CurrencyCode:  "USD",
+			AmountCents:   2500,
+			StartDate:     time.Date(2027, time.February, 1, 0, 0, 0, 0, time.UTC),
+			Occurrences:   3,
+			IntervalUnit:  "month",
+			IntervalCount: 1,
+		},
+		{
+			Title:         "Cloud hosting",
+			Description:   "Monthly server hosting (USD billed)",
+			CurrencyCode:  "USD",
+			AmountCents:   2500,
+			StartDate:     time.Date(2027, time.February, 1, 0, 0, 0, 0, time.UTC),
+			Occurrences:   6,
+			IntervalUnit:  "week",
 			IntervalCount: 1,
 		},
 		{
@@ -181,6 +202,13 @@ func seedExpenses(db *gorm.DB) {
 }
 
 func main() {
+	// setup log
+	logFile, err := os.OpenFile("expensetracker.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0664)
+	if err != nil {
+		log.Fatalf("Failed to open log file: %v\n", err)
+	}
+	log.SetOutput(logFile)
+
 	setupTestData()
 	tui.Run()
 }
